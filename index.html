@@ -1,261 +1,1477 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://github.com/CheJay2006/lumoleap/blob/main/Untitled%20design.png?raw=true" type="image/png" title="Che Jay">
-    <meta property="og:image" itemprop="image" icon="https://github.com/CheJay2006/lumoleap/blob/main/Untitled%20design.png?raw=true" title="Che Jay"/>
-    <meta property="og:type" content="website"/>
-    <title>LumoLeap - Illuminate Your Mind. Leap Ahead.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: LumoLeap Brand Palette -->
-    <!-- Application Structure Plan: The SPA is designed as a top-to-bottom narrative scroll, guiding the user through the brand's story. It starts with a strong value proposition (Hero), builds trust and explains the mission (About), showcases the core product (Videos), encourages engagement (Community), and ends with a clear call to action (Footer). This linear flow is intuitive for a brand introduction, ensuring users understand what LumoLeap is and how to get involved without complex navigation. Interactions like smooth scrolling and subtle animations enhance the user experience. -->
-    <!-- Visualization & Content Choices: The source material is qualitative brand information, not quantitative data. Goal: Inform & Engage. Method: The information is organized into thematic sections (About, Videos, Community) using structured HTML and styled with Tailwind CSS. For the 'Videos' section, cards with thumbnails and text are used to represent YouTube content, as direct data visualization is not applicable. For 'Community', cards represent different social channels. Interaction: Users interact via buttons linking to external social platforms. Justification: This approach is optimal for a brand website, prioritizing clear communication and direct pathways to community engagement over data charts. NO SVG/Mermaid used. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <style>
+#isometric-effect-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10001;
+  display: none;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://i.pinimg.com/originals/78/28/60/78286070dce6be18c4bfb4ba70cfc8ce.webp);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+}
+body::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-image: url('https://github.com/CheJay2006/Canvas-Industries/blob/main/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.jpg?raw=true');
+    cursor: pointer;
+    z-index: 9999;
+}
+  }
+
+@media screen and (max-width: 300px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 20%;
+  }
+}
+</style>
+</head>
+</head>
+<link rel="shortcut icon" href="https://github.com/CheJay2006/Canvas-Industries/blob/main/Untitled.png?raw=true" type="image/png" title="Che Jay">
+<meta property="og:image" itemprop="image" icon="https://github.com/CheJay2006/Canvas-Industries/blob/main/Untitled.png?raw=true" title="Che Jay"/>
+<meta property="og:type" content="website"/>
+<title>Che Jay</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        .navbar {
+          left: 1rem;
+          overflow: hidden;
         }
-        .gradient-text {
-            background: linear-gradient(to right, #6366F1, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 13px 15px;
+            text-decoration: none;
         }
-        .gradient-bg {
-            background: linear-gradient(to right, #6366F1, #A855F7);
+
+        .navbar a:hover {
+            color: white;
         }
-        .scroll-target {
-          scroll-margin-top: 80px;
+
+        .active1, .signup-btn, button, button22 {
+          font-family: 'SF Pro Display', 'Segoe UI', 'Arial', sans-serif;
+          font-weight: 600;
+          font-size: 1.1em;
+          color: #fff;
+          background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+          border: 1.5px solid rgba(255,255,255,0.35);
+          border-radius: 18px;
+          box-shadow:
+            0 2px 8px 0 rgba(31,38,135,0.10),
+            0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+            0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+          backdrop-filter: blur(18px) saturate(1.2);
+          -webkit-backdrop-filter: blur(18px) saturate(1.2);
+          text-align: center;
+          margin: 0 7px;
+          padding: 0.7em 2.2em;
+          transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+          outline: none;
+          overflow: hidden;
+          cursor: pointer;
         }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        .active1:hover, .signup-btn:hover, button:hover, button22:hover {
+          background: linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.18) 100%), rgba(255,255,255,0.18);
+          box-shadow:
+            0 4px 16px 0 rgba(31,38,135,0.18),
+            0 2px 8px 0 rgba(255,255,255,0.22) inset,
+            0 1px 1px 0 rgba(255,255,255,0.30) inset;
+          border: 1.5px solid rgba(255,255,255,0.45);
+          color: #f8f8f8;
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .active1:active, .signup-btn:active, button:active, button22:active {
+          background: linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.05) 100%), rgba(255,255,255,0.10);
+          box-shadow:
+            0 1px 2px 0 rgba(31,38,135,0.10),
+            0 0.5px 0.5px 0 rgba(255,255,255,0.18) inset;
+          color: #e0e0e0;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<style>
+  html {
+  scroll-behavior: smooth;
+}
+</style>
+<body>
+<br>
+<div class="navbar">
+  <a class="active1" href="C:\Users\user\Documents\Getting Started\.vscode\index.html" onclick="myFunction()" onclick="alert('C:\Users\user\Documents\Getting Started\.vscode\index.html')"><i class="fa fa-fw fa-home"></i> Home</a>
+  <div class="main" id="section4"></div>
+  <a class="active1" href="#text-section2" onclick="myFunction()" onclick="alert('#text-section2')"><i class="fa fa-address-book"></i> About</a>
+  <a class="active1" href="#contact-form" onclick="myFunction()" onclick="alert('#contact-form')"><i class="fa fa-phone"></i> Contacts</a>
+  </div>
+<style>
+#liquid-effect-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10001;
+  display: none;
+}
+</style>
+<script>
+// Add click event to the pseudo-element by overlaying a transparent button with isometric animation effect
+document.addEventListener('DOMContentLoaded', function() {
+  var afterDiv = document.createElement('div');
+  afterDiv.style.position = 'absolute';
+  afterDiv.style.top = '1rem';
+  afterDiv.style.right = '1rem';
+  afterDiv.style.width = '60px';
+  afterDiv.style.height = '60px';
+  afterDiv.style.zIndex = '10000';
+  afterDiv.style.cursor = 'pointer';
+  afterDiv.style.background = 'transparent';
+  afterDiv.title = 'Go to LumoLeap YouTube channel';
 
-    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#home" class="flex items-center space-x-2">
-                <img src="https://github.com/CheJay2006/lumoleap/blob/main/Untitled%20design.png?raw=true" alt="LumoLeap Logo" class="h-10 w-10" style="border-radius:50%;">
-                <span class="text-2xl font-bold gradient-text">LumoLeap</span>
-            </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-slate-600 hover:text-purple-600 transition">Home</a>
-                <a href="#about" class="text-slate-600 hover:text-purple-600 transition">About</a>
-                <a href="#videos" class="text-slate-600 hover:text-purple-600 transition">Videos</a>
-                <a href="#community" class="text-slate-600 hover:text-purple-600 transition">Community</a>
-            </nav>
-            <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="hidden md:block bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-transform transform hover:scale-105 shadow-lg">Subscribe</a>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
-                 <div class="w-6 h-0.5 bg-slate-800 mb-1.5"></div>
-                 <div class="w-6 h-0.5 bg-slate-800 mb-1.5"></div>
-                 <div class="w-6 h-0.5 bg-slate-800"></div>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
-            <a href="#home" class="block text-center py-2 px-4 text-slate-600 hover:bg-slate-100">Home</a>
-            <a href="#about" class="block text-center py-2 px-4 text-slate-600 hover:bg-slate-100">About</a>
-            <a href="#videos" class="block text-center py-2 px-4 text-slate-600 hover:bg-slate-100">Videos</a>
-            <a href="#community" class="block text-center py-2 px-4 text-slate-600 hover:bg-slate-100">Community</a>
-             <div class="p-4">
-                 <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="block w-full text-center bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition shadow-lg">Subscribe</a>
+  // Create SVG overlay for isometric effect
+  var overlay = document.createElement('div');
+  overlay.id = 'isometric-effect-overlay';
+  overlay.innerHTML = `
+    <svg id="isometric-svg" width="100vw" height="100vh" viewBox="0 0 1920 1080" style="width:100vw;height:100vh;" xmlns="http://www.w3.org/2000/svg">
+      <g id="isoGroup" transform="skewY(-30) skewX(30)">
+        <rect id="isoRect" x="860" y="490" width="200" height="100" rx="30" fill="#fff" opacity="0.7"/>
+        <polygon id="isoShadow" points="860,590 1060,590 1100,650 820,650" fill="#e0e0e0" opacity="0.3"/>
+      </g>
+    </svg>
+  `;
+  document.body.appendChild(overlay);
+
+  afterDiv.onclick = function(e) {
+    overlay.style.display = 'block';
+    var svg = document.getElementById('isometric-svg');
+    var group = svg.getElementById ? svg.getElementById('isoGroup') : svg.querySelector('#isoGroup');
+    var rect = svg.getElementById ? svg.getElementById('isoRect') : svg.querySelector('#isoRect');
+    var shadow = svg.getElementById ? svg.getElementById('isoShadow') : svg.querySelector('#isoShadow');
+    var start = null;
+    var duration = 1000; // 0.5 second
+    function animate(ts) {
+      if (!start) start = ts;
+      var progress = (ts - start) / duration;
+      // Animate the rectangle: scale up, rotate, and fade out
+      var scale = 1 + 1.5 * progress;
+      var rotate = 0 + 45 * progress;
+      var opacity = 0.7 * (1 - progress);
+      group.setAttribute('transform', `skewY(-30) skewX(30) scale(${scale}) rotate(${rotate} 960 540)`);
+      rect.setAttribute('opacity', opacity);
+      shadow.setAttribute('opacity', 0.3 * (1 - progress));
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        overlay.style.display = 'none';
+        // Reset for next time
+        group.setAttribute('transform', 'skewY(-30) skewX(30)');
+        rect.setAttribute('opacity', 0.7);
+        shadow.setAttribute('opacity', 0.3);
+        window.open('https://youtube.com/@lumoleap?si=f89aOMQg2BCutrLr', '_blank');
+      }
+    }
+    requestAnimationFrame(animate);
+  };
+  document.body.appendChild(afterDiv);
+});
+</script>
+</body>
+<div class="navbar">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+<br>
+<dd>
+<div style="display:left;align-items:center;justify-content:none;">
+  <div style="width:100px;height:100px;display:inline-flex;align-items:center;justify-content:center;background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);border: 1.5px solid rgba(255,255,255,0.35);border-radius: 24px;box-shadow:0 2px 8px 0 rgba(31,38,135,0.10),0 1.5px 4px 0 rgba(255,255,255,0.18) inset,0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;backdrop-filter: blur(18px) saturate(1.2);-webkit-backdrop-filter: blur(18px) saturate(1.2);aturate(1.2);">
+  <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/Untitled.png?raw=true" width="80" height="80" style="border-radius:50%;box-shadow:0 2px 8px rgba(31,38,135,0.10);" title="C h e J a y | C a n v a s I n d u s t r i e s">
+  </div>
+  </div>
+</dd>
+<script>
+// Typing animation for 'Canvas Industries' label
+document.addEventListener('DOMContentLoaded', function() {
+  const labelElem = document.getElementById('typing-canvas-industries');
+  const text = "Canvas Industries";
+  let i = 0;
+  function typeLabel() {
+    if (i <= text.length) {
+      labelElem.textContent = text.slice(0, i);
+      i++;
+      setTimeout(typeLabel, 40);
+    }
+  }
+  typeLabel();
+});
+</script>
+</body>
+</div>
+</div>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: transparent;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  border-radius: 50px 50px 50px 50px;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 1100px; /* only for demonstration, should be removed */
+  background-color: transparent;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 1100px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: transparent;
+  border-top: 2px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px 50px 50px 50px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 97%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+<center>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head></center></body></body></a></body></div>
+</label>
+</body>
+</div>
+<br>
+<br>
+<body>
+  <style>
+    .text-section1 p1 {
+        font-family: 'sans-serif', cursive;
+        color: white;
+        font-size: 7rem;
+    }
+    .text-section1 span {
+        font-family: 'Caveat';
+        color: white;
+        font-size: 5rem;
+    }
+    .text-section1 {
+        text-align: center;
+        margin-top: 2rem;
+    }
+  </style>
+  <div class="text-section1">
+    <p1 id="type-title"></p1><br>
+    <span id="type-desc"></span>
+  </div>
+  <script>
+    // Typing animation for title and description
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = "# Canvas Industries";
+      const desc = "Our digital web page introducing ourselves...";
+      const titleElem = document.getElementById('type-title');
+      const descElem = document.getElementById('type-desc');
+      let t = 0, d = 0;
+      function typeTitle() {
+        if (t <= title.length) {
+          titleElem.textContent = title.slice(0, t);
+          t++;
+          setTimeout(typeTitle, 40);
+        } else {
+          setTimeout(typeDesc, 200);
+        }
+      }
+      function typeDesc() {
+        if (d <= desc.length) {
+          descElem.textContent = desc.slice(0, d);
+          d++;
+          setTimeout(typeDesc, 30);
+        }
+      }
+      typeTitle();
+    });
+  </script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<header>
+  <style>
+        .text-section1 {
+            flex: 1;
+            padding: 40px;
+        }
+        .text-section1 h1 {
+            font-family: 'sans-serif', cursive; /* Handwritten font for "CheJay" */
+            font-size: 1.7em;
+            color: white;
+            margin: 0;
+        }
+        .text-section1 h1 span {
+            font-family: 'Caveat', cursive; /* Handwritten font for "CheJay" */
+            color: yellow white;
+            font-size: 0.7em;
+        }
+  </style>
+  <div class="text-section1">
+  <h1># A reminder to you <span><font style="'Lucida Handwriting', sans-serif;">Subscribe to the LumoLeap YouTube channel...</font></span></h1>
+</div>
+<style>
+* {
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+body {
+   margin:0
+  }
+.mySlides {
+  display: none
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: sticky;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 20px;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 20px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.text p1 {
+    font-family: cursive;
+    color: black;
+  }
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #A38772;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+<body>
+<div class="slideshow-container">
+<center>
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/1000091250.jpg?raw=true" style="width:100%" title="LumoLeap">
+  <div class="text"><p1 style="font-family:cursive;" color="black">LumoLeap</div></p1>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/1000091249.jpg?raw=true" style="width:100%" title="LumoLeap">
+  <div class="text"><p style="font-family:cursive;">LumoLeap</div></p>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/DeWatermark.ai_1750423268489%20(1).jpeg?raw=true" style="width:100%" title="LumoLeap">
+  <div class="text"><p style="font-family:cursive;">LumoLeap</div></p>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/DeWatermark.ai_1750423246119%20(1).jpeg?raw=true" style="width:100%" title="LumoLeap">
+  <div class="text"><p style="font-family:cursive;">LumoLeap</div></p>
+</div>
+</center>
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span> 
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</header>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box; 
+  display: flex;
+  margin-right: 50px;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  right: 100px;
+}
+
+.column {
+  float: left; margin-right: 10px;
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  background-color: back;
+  left: 100px;
+}
+
+.card {
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+  margin: 15px;
+  background-color: transparent;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(55px);
+   left: 100px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: transparent;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(55px);
+  color: black;
+   left: 100px;
+}
+
+.container {
+  padding: 0 20px;
+  left: 5px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: flex;
+   
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #333;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+@media screen and (max-width: 100px) {
+  .column {
+    width: 100%;
+    display: flex;
+     
+  }
+}
+</style>
+</head>
+</header>
+<br>
+<body>
+<header>
+  <style>
+    .text-section2 {
+        flex: 1;
+        padding: 40px;
+    }
+    .text-section2 h1 {
+        font-family: 'sans-serif', cursive; /* Handwritten font for "CheJay" */
+        font-size: 1.7em;
+        color: white;
+        margin: 0;
+    }
+    .text-section2 h1 span {
+        font-family: 'Caveat', cursive; /* Handwritten font for "CheJay" */
+        color: yellow white;
+        font-size: 0.8em;
+    }
+</style>
+<div class="text-section2">
+<div class="main" id="text-section2">
+<h1># About Our Page <span><font style="'Lucida Handwriting', sans-serif;">Let's call you in simple words...</font></span></h1>
+</div>
+<br>
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin: 0;
+            background-color: #567257;
+            
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+            background-color: transparent;
+            border-top: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 200px 0px 200px 0px;
+            overflow: hidden;
+        }
+        .text-section {
+            flex: 1;
+            padding: 40px;
+        }
+        .text-section h1 {
+            font-size: 1.8em;
+            color: white;
+            margin: 0;
+        }
+        .text-section h1 span {
+            font-family: 'Caveat', cursive; /* Handwritten font for "Lucy" */
+            color: #dfdbc5;
+            font-size: 1.2em;
+        }
+        .text-section p {
+            font-size: 0.6em;
+            color: white;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+        .text-section p strong {
+            font-weight: 700;
+        }
+        .signup-btn {
+            font-family: 'sans-serif', cursive;
+            margin-top: 20px;
+            padding: 5px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            box-shadow:
+              0 2px 8px 0 rgba(31,38,135,0.10),
+              0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+              0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+            backdrop-filter: blur(18px) saturate(1.2);
+            -webkit-backdrop-filter: blur(18px) saturate(1.2);
+            transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 100;
+            display: inline-block;
+        }
+        .signup-btn:hover {
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            box-shadow:
+              0 2px 8px 0 rgba(31,38,135,0.10),
+              0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+              0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+            backdrop-filter: blur(18px) saturate(1.2);
+            -webkit-backdrop-filter: blur(18px) saturate(1.2);
+            transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+            color: #fff;
+            border: 5px solid #cccccc;
+        }
+        .image-section {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #567257;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* New styles for form inputs */
+        .signup-form {
+            display: none;
+            margin-top: 20px;
+        }
+        .signup-form input {
+            font-family: 'sans-serif', cursive;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 5px solid #ddd;
+            border-radius: 20px;
+            font-size: 1.1em;
+        }
+        .signup-form input[type="text"], .signup-form input[type="password"] {
+            font-family: 'sans-serif', cursive;
+            border: 5px solid #cccccc;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .signup-form input[type="checkbox"] {
+            font-family: 'sans-serif', cursive;
+            width: auto;
+        }
+        .signup-form input[type="submit"] {
+          font-family: 'sans-serif', cursive;
+            margin-top: 20px;
+            padding: 5px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            box-shadow:
+              0 2px 8px 0 rgba(31,38,135,0.10),
+              0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+              0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+            backdrop-filter: blur(18px) saturate(1.2);
+            -webkit-backdrop-filter: blur(18px) saturate(1.2);
+            transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 50;
+            display: inline-block;
+        }
+        .signup-form input[type="submit"]:hover {
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            box-shadow:
+              0 2px 8px 0 rgba(31,38,135,0.10),
+              0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+              0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+            backdrop-filter: blur(18px) saturate(1.2);
+            -webkit-backdrop-filter: blur(18px) saturate(1.2);
+            transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+            color: #fff;
+            border: 5px solid #cccccc;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section: Text Content -->
+        <div class="text-section">
+            <h1>Hello, I'm <span><font style="'San Francisco', San Francisco;">Chethina.</font></span></h1>
+            <p>
+                I am currently studying Advanced Level in a government school, Now, my goal is to use my knowledge and help others! 
+            </p>
+            <p>
+                I can help you with anything like your website or blog, graphic design work, or video editing work. It's a process that I pride myself on being able to provide you with whatever you ask for in a very short period. 
+            </p>
+            <p>
+                I give it to you to <strong>enjoy very well.</strong> What are you waiting for?
+            <p>Come and join me!</p>
+            <a class="signup-btn" href="#" onclick="showSignupForm()">SIGN UP</a>
+
+            <!-- Signup form that appears on button click -->
+            <div class="signup-form" id="signupForm">
+                <form onsubmit="return submitForm()"> <!-- Submit button calls submitForm() -->
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <!-- Password field with visibility toggle -->
+                    <input type="text" id="password" placeholder="Enter your password" required>
+                    <label>
+                        <input type="checkbox" id="showPassword" onclick="togglePassword()"> Show Password
+                    </label>
+                    <input type="submit" value="Submit">
+                </form>
             </div>
         </div>
-    </header>
+        <!-- Right Section: Image -->
+        <div class="image-section">
+            <!-- Replace with the image source of your uploaded image -->
+            <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/file_00000000eb386243b7651140d8924cc1.png?raw=true" title="Chethina Jayawardhana">
+        </div>
+    </div>
+    <script>
+        // Function to toggle signup form visibility
+        function showSignupForm() {
+            var form = document.getElementById("signupForm");
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
 
-    <main>
-        <section id="home" class="min-h-screen flex items-center bg-white scroll-target">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Illuminate Your Mind. <span class="gradient-text">Leap Ahead.</span></h1>
-                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-                    Welcome to LumoLeap! We provide high-quality, easy-to-understand educational content to fuel your curiosity and help you master new skills.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="gradient-bg text-white px-8 py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition-transform transform hover:scale-105 shadow-xl">
-                        Explore Videos
-                    </a>
-                    <a href="#community" class="bg-slate-200 text-slate-800 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-slate-300 transition-transform transform hover:scale-105 shadow-xl">
-                        Join Community
-                    </a>
+        // Function to toggle password visibility
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var checkbox = document.getElementById("showPassword");
+            if (checkbox.checked) {
+                passwordInput.type = "text"; // Show password
+            } else {
+                passwordInput.type = "password"; // Hide password
+            }
+        }
+
+        // Function to handle form submission and close the form
+        function submitForm() {
+            var form = document.getElementById("signupForm");
+            form.style.display = "none";  // Hide the form after submission
+            alert("The form has been submitted successfully!");
+            return false; // Prevent the page from reloading (form submission behavior)
+        }
+    </script>
+</body>
+</center>
+</header>
+<br>
+<style>
+  html {
+    box-sizing: border-box; 
+    display: flex;
+    margin-right: 50px;
+  }
+  
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+    right: 100px;
+  
+  }
+  </style> 
+  </body>
+<center>
+<body>
+  <header>
+    <style>
+      .text-section3 {
+          flex: 1;
+          padding: 40px;
+      }
+      .text-section3 h1 {
+          font-family: 'sans-serif', cursive; /* Handwritten font for "CheJay" */
+          font-size: 1.7em;
+          color: white;
+          margin: 0;
+      }
+      .text-section3 h1 span {
+          font-family: 'Caveat', cursive; /* Handwritten font for "CheJay" */
+          color: white;
+          font-size: 0.8em;
+      }
+  </style>
+    <div class="text-section3">
+      <div class="main" id="contact-form">
+      <h1># Contact us <span><font style="'Lucida Handwriting', sans-serif;">Please contact us via our email.....</font></span></h1>
+    </div>
+    <style>
+      .container1 {
+        width: 100%;
+        background-color: transparent;
+        border-top: 2px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0px 0px 0px 0px rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.2);
+        border-radius: 20px;
+      }
+    </style>
+<div class="container1">
+      <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/Black%20Technology%20LinkedIn%20Banner.png?raw=true" height="396px" width="100%" title="C A N V A S | I N D U S T R I E S"""/>
+  </center>
+<body>
+  <br>
+  <center>
+    <div class="contact-form">
+        <div class="header">
+            <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/01c288c8-f82a-4531-ae89-344604f11668.jpg?raw=true" title="Chethina Jayawardhana" class="profile-img">
+            <h1 style="font-family:Snell Roundhand, cursive">Chethina Jayawardhana</h1>
+            <p11 style="font-family:Euclid Circular B Regular,sans-serif;">Founder</p11>
+        </div>
+        <h22 style="font-family:cursive;">Or leave us your contact and I'll<br> get back to you right away</h22>
+        <form>
+          <br>
+            <label for="name">I am</label>
+            <input type="text1" id="name" name="name" placeholder="Chethina Jayawardhana...">
+            <label for="email">Please reach me via my email</label>
+            <input type="email1" id="email" name="email" placeholder="canvasindustries@gmail.com">
+            <label for="phone">and <br>my phone number</label>
+            <div class="phone-input">
+              <br>
+                <img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/Flag_of_Sri_Lanka.svg.png?raw=true" title="Sri Lanka Flag" class="flag-icon">
+                <input type="text2" id="phone" name="phone" placeholder="+94 XX XX XX XXX ">
+            </div>
+            <br>
+            <a class="active" href="C:\Users\user\Documents\Getting Started\.vscode\Chethina.html" onclick="myFunction('C:\Users\user\Documents\Getting Started\.vscode\Chethina.html')"></a>
+            <button22 type="submit">Submit Contact Info</button22>
+        </form>
+      </center>
+    </div>
+</body>
+<style type="text/css">
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contact-form {
+    background-color: transparent;
+    border-top: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 80px;
+    width: 400px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+}
+
+p11 {
+    font-size: 14px;
+    color: white;
+    margin: 0;
+}
+
+h22 {
+    font-family: 'sans-serif', cursive;
+    font-size: 34px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+label {
+    font-family: 'sans-serif', cursive;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+input[type="text1"]#name {
+    font-family: 'sans-serif', cursive;
+    padding: 10px;
+    font-size: 14px;
+    border: 5px solid #cccccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 55%;
+}
+input[type="email1"]#email {
+    font-family: 'sans-serif', cursive;
+    padding: 10px;
+    font-size: 14px;
+    border: 5px solid #cccccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 60%;
+}
+
+
+.phone-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+
+.flag-icon {
+    width: 40px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+input[type="text2"]#phone {
+    font-family: 'sans-serif', cursive;
+    padding: 10px;
+    font-size: 14px;
+    border: 5px solid #cccccc;
+    border-radius: 20px;
+    width: 80%;
+}
+
+button22 {
+    font-family: 'sans-serif', cursive;
+    padding: 10px;
+    font-size: 14px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    box-shadow:
+     0 2px 8px 0 rgba(31,38,135,0.10),
+     0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+     0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+    border: 5px solid #cccccc;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button22:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    box-shadow:
+     0 2px 8px 0 rgba(31,38,135,0.10),
+     0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+     0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+    color: #fff;
+    border: 5px solid #cccccc;
+}
+</style>
+</head>
+<br>
+ <head> 
+<style>
+button.back-to-top{
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff;
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+  border-radius: 50px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+    0 2px 8px 0 rgba(31,38,135,0.10),
+    0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+    0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+  color: #fff;
+  clear: both;
+  visibility: hidden;
+  position: fixed;
+  cursor: pointer;
+  display: block;
+  border: none;
+  right: 50px;
+  bottom: 75px;
+  font-size: 0px;
+  outline: 0 !important;
+  z-index: 99;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+button.back-to-top:hover,
+button.back-to-top:active,
+button.back-to-top:focus,{
+  outline: 0 !important;
+}
+button.back-to-top::before,
+button.back-to-top::after {
+  content: "";
+    display: block;
+    vertical-align: middle;
+    border-bottom: solid 10px white;
+    border-left: solid 10px transparent;
+    line-height: 0;
+    border-right: solid 10px transparent;
+    height: 0;
+    margin: 18px auto 0;
+    width: 0;
+  border-radius:20px;
+  visibility: hidden;
+}
+button.back-to-top.show::after,
+button.back-to-top.show::before{
+  visibility: visible;
+}
+button.back-to-top::after {
+  border-bottom-color:#fff;
+      position: relative;
+  top:-24px;
+}
+button.back-to-top.show {
+  display: block;
+  background-color: transparent;
+  border: 5px solid white;
+  right: 30px;
+  bottom: 70px;
+  height: 50px;
+  width: 50px;
+  visibility: visible;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+button.back-to-top.show:active {
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+}
+</style>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+</head>
+<body translate="no">
+  <div class="contentDiv" id="content">
+<button class="back-to-top" type="button"></button>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+      <script id="rendered-js" >
+// Back to top
+var amountScrolled = 200;
+var amountScrolledNav = 25;
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() > amountScrolled) {
+    $('button.back-to-top').addClass('show');
+  } else {
+    $('button.back-to-top').removeClass('show');
+  }
+});
+
+$('button.back-to-top').click(function () {
+  $('html, body').animate({
+    scrollTop: 0 },
+  800);
+  return false;
+});
+//# sourceURL=pen.js
+    </script> 
+</body>
+<center>
+<div class="relative h-12 w-12 cursor-pointer p-0.5 mc7re5">
+  <div class="aRc_7q"></div>
+  <div class="h-6 w-full NwoKpJ"></div>
+  <svg class="_8vc7Q8 absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/3" width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 9L15 4.5L23.5 9H30L15 0L0 9H6.5Z" fill="#F6EAFF"></path>
+    <path d="M11.8465 16L15.0003 14.1791L18.1542 16H23.6149L15.0003 11.0264L6.38574 16H11.8465Z" fill="#dfdbc5"></path>
+    <path d="M11.8465 23.9736L15.0003 22.1528L18.1542 23.9736H23.6149L15.0003 19L6.38574 23.9736H11.8465Z" fill="#A38772"></path>
+    <defs>
+      <linearGradient id="paint0_linear_4323_2715" x1="15" y1="0.963776" x2="15" y2="35.6048" gradientUnits="userSpaceOnUse">
+      <stop offset="0.248525" stop-color="white"></stop>
+      <stop offset="0.248948" stop-color="white" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+</svg>
+</div>
+</center>
+<style>/* REMOVE THIS, USE YOUR OWN  */
+/* Transparent fluid bar at the base background */
+.fluid-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%), rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  box-shadow:
+   0 2px 8px 0 rgba(31,38,135,0.10),
+   0 1.5px 4px 0 rgba(255,255,255,0.18) inset,
+   0 0.5px 0.5px 0 rgba(255,255,255,0.25) inset;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  transition: background 0.25s, box-shadow 0.25s, border 0.25s, color 0.25s;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  transition: background 0.3s;
+}
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, Sans-serif;
+  background-color: yellow light;
+}
+/* STYLES SPECIFIC TO FOOTER  */
+.footer {
+  color: #333;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer .col {
+  flex: 0;
+  margin: 0 20px;
+}
+.footer .column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.footer .column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .column ul li {
+  margin-bottom: 10px;
+}
+.footer .column ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.footer .column ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-icons {
+  display: inline-flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+.footer .social-icons a img {
+  width: 24px;
+  height: 24px;
+}
+.footer-bottom {
+  background-color: #567257;
+  padding: 149px 30px;
+  font-size: 14px;
+  color: #0d0d0d;
+  border-radius: 40px;
+}
+</style>
+<!-- FOOTER START -->
+<!-- Transparent Fluid Bar at the Base -->
+<div class="fluid-bar">
+  <span id="fluid-bar-typing"></span>
+</div>
+<script>
+// Typing animation for fluid-bar
+document.addEventListener('DOMContentLoaded', function() {
+  const fluidBarElem = document.getElementById('fluid-bar-typing');
+  const part1 = "Canvas Industries";
+  const part2 = "Inspiring Digital Creativity";
+  let t = 0, d = 0;
+  function typePart1() {
+    if (t <= part1.length) {
+      fluidBarElem.innerHTML = part1.slice(0, t);
+      t++;
+      setTimeout(typePart1, 40);
+    } else {
+      fluidBarElem.innerHTML = part1 + ' &mdash; ';
+      setTimeout(typePart2, 200);
+    }
+  }
+  function typePart2() {
+    if (d <= part2.length) {
+      fluidBarElem.innerHTML = part1 + ' &mdash; ' + part2.slice(0, d);
+      d++;
+      setTimeout(typePart2, 30);
+    }
+  }
+  typePart1();
+});
+</script>
+</div>
+<body>
+    <footer>
+        <div class="footer">
+            <div class="column">
+              <br>
+              <br>
+              <br>
+                <h3 style="color:#dfdbc5;"><font  size="+4">Canvas</h3></font>
+                <p style="font-family:Lucida Handwriting"><font color="#dfdbc5">Subscribe to newsletters for<br>more updates</p>
+                <div class="social-icons"></font>
+                  <center>
+<a href="https://www.instagram.com/mrexitoz/?hl=en" target="_blank" rel="noopener noreferrer"><img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/Instagram_icon.png?raw=true" title="Instagram"></a>
+<a href="https://www.tiktok.com/@mrexitoz?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"><img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/image.png?raw=true" title="TikTok"></a>
+                    <a href="#"><img src="https://github.com/CheJay2006/Canvas-Industries/blob/main/LinkedIn_logo_initials.png?raw=true" title="LinkedIn"></a></center>
                 </div>
             </div>
-        </section>
-
-        <section id="about" class="py-20 bg-slate-50 scroll-target">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">What is <span class="gradient-text">LumoLeap?</span></h2>
-                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-                        LumoLeap was born from a passion for making knowledge accessible to everyone. We believe that learning should be an exciting adventure, not a chore. Our mission is to break down complex topics into engaging content that empowers you to grow, innovate, and achieve your goals.
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center fade-in">
-                        <div class="w-16 h-16 gradient-bg rounded-full mx-auto flex items-center justify-center mb-4">
-                             <span class="text-3xl text-white">💡</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Accessible Knowledge</h3>
-                        <p class="text-slate-600">We distill complex subjects into clear, concise, and engaging videos that anyone can understand.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center fade-in">
-                         <div class="w-16 h-16 gradient-bg rounded-full mx-auto flex items-center justify-center mb-4">
-                            <span class="text-3xl text-white">🤝</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Thriving Community</h3>
-                        <p class="text-slate-600">Join a vibrant community of learners to discuss ideas, ask questions, and grow together.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center fade-in">
-                        <div class="w-16 h-16 gradient-bg rounded-full mx-auto flex items-center justify-center mb-4">
-                           <span class="text-3xl text-white">🚀</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Continuous Growth</h3>
-                        <p class="text-slate-600">Stay on the cutting edge with fresh content on technology, science, and personal development.</p>
-                    </div>
-                </div>
+            <div class="column">
+                <h3 style="color:#dfdbc5;">DOMAINS</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Graphic Design</a></li>
+                    <li><a href="#">Video Editing</a></li>
+                </ul>
             </div>
-        </section>
-
-        <section id="videos" class="py-20 bg-white scroll-target">
-             <div class="container mx-auto px-6">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest From Our <span class="gradient-text">Channel</span></h2>
-                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-                        Here are some of our recent videos. We cover a wide range of topics designed to spark your curiosity.
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-slate-50 rounded-xl shadow-lg overflow-hidden flex flex-col fade-in">
-                        <img src="https://placehold.co/600x400/6366F1/FFFFFF?text=AI+Explained" alt="Video Thumbnail" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">The Rise of AI: A Beginner's Guide</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">Understand the basics of Artificial Intelligence and its impact on our world.</p>
-                            <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="mt-auto block text-center w-full bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Watch on YouTube</a>
-                        </div>
-                    </div>
-                     <div class="bg-slate-50 rounded-xl shadow-lg overflow-hidden flex flex-col fade-in">
-                        <img src="https://placehold.co/600x400/A855F7/FFFFFF?text=Productivity" alt="Video Thumbnail" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">5 Productivity Hacks Backed By Science</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">Learn simple techniques to boost your focus and get more done in less time.</p>
-                            <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="mt-auto block text-center w-full bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Watch on YouTube</a>
-                        </div>
-                    </div>
-                     <div class="bg-slate-50 rounded-xl shadow-lg overflow-hidden flex flex-col fade-in">
-                        <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Web+3.0" alt="Video Thumbnail" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-bold mb-2">What is Web 3.0? (Simple Explanation)</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">Demystifying the next evolution of the internet, including blockchain and decentralization.</p>
-                            <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="mt-auto block text-center w-full bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition">Watch on YouTube</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12 fade-in">
-                    <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="gradient-bg text-white px-8 py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition-transform transform hover:scale-105 shadow-xl">
-                        View All Videos
-                    </a>
-                </div>
+            <div class="column">
+                <h3 style="color:#dfdbc5;">COMPANY</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
             </div>
-        </section>
-
-        <section id="community" class="py-20 bg-slate-50 scroll-target">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Join The <span class="gradient-text">Conversation</span></h2>
-                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-                        Learning is better together. Connect with us and other LumoLeap members on your favorite platform.
-                    </p>
-                </div>
-                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center fade-in">
-                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4 text-white text-3xl font-bold">W</div>
-                        <h3 class="text-2xl font-bold mb-2">WhatsApp Channel</h3>
-                        <p class="text-slate-600 mb-6 flex-grow">Get instant updates, behind-the-scenes content, and new video alerts directly on your phone.</p>
-                        <a href="https://whatsapp.com/channel/0029Vb6rZiELo4hb4f9Eqp2s" target="_blank" class="mt-auto bg-green-500 text-white w-full px-6 py-2 rounded-lg hover:bg-green-600 transition">Join Channel</a>
-                    </div>
-                     <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center fade-in">
-                        <div class="w-16 h-16 bg-sky-500 rounded-full flex items-center justify-center mb-4 text-white text-3xl font-bold">T</div>
-                        <h3 class="text-2xl font-bold mb-2">Telegram Channels</h3>
-                        <p class="text-slate-600 mb-6 flex-grow">Choose how you want to connect: get announcements in our channel or chat with the community in our group.</p>
-                        <div class="w-full flex flex-col space-y-3">
-                             <a href="https://t.me/lumoleap" target="_blank" class="bg-sky-500 text-white w-full px-6 py-2 rounded-lg hover:bg-sky-600 transition">Announcements</a>
-                             <a href="https://t.me/lumoleapchat" target="_blank" class="bg-slate-200 text-slate-800 w-full px-6 py-2 rounded-lg hover:bg-slate-300 transition">Community Chat</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="column">
+                <h3 style="color:#dfdbc5;">CAREERS</h3>
+                <ul>
+                    <li><a href="#">Open positions</a></li>
+                    <li><a href="#">Internships</a></li>
+                    <li><a href="#">Life at Canvas</a></li>
+                </ul>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-slate-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <a href="#home" class="flex items-center justify-center space-x-2 mb-4">
-                <img src="https://github.com/CheJay2006/lumoleap/blob/main/Untitled%20design.png?raw=true" alt="LumoLeap Logo" class="h-10 w-10" style="border-radius:50%;">
-                 <span class="text-2xl font-bold">LumoLeap</span>
-            </a>
-            <p class="mb-6 text-slate-400">Ready to take the leap? Start your learning journey with us today.</p>
-            <div class="flex justify-center space-x-6 mb-8">
-                 <a href="https://www.youtube.com/@LumoLeap" target="_blank" class="text-slate-400 hover:text-white transition">YouTube</a>
-                 <a href="https://whatsapp.com/channel/0029Vb6rZiELo4hb4f9Eqp2s" target="_blank" class="text-slate-400 hover:text-white transition">WhatsApp</a>
-                 <a href="https://t.me/lumoleap" target="_blank" class="text-slate-400 hover:text-white transition">Telegram</a>
+            <div class="column">
+                <h3 style="color:#dfdbc5">RESOURCES</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case studies</a></li>
+                    <li><a href="#">White papers</a></li>
+                </ul>
             </div>
-            <p class="text-slate-500 text-sm">&copy; 2025 LumoLeap. All Rights Reserved.</p>
+          </div>
+          </h3>
+        </div>
+        <div class="footer-bottom"></div>
+            <p style="font-family:cursive;">Copyright © 2025 Canvas Industries Pvt Ltd. All rights reserved.</p>
+            <p style="font-family:cursive;">Designed and developed by the Che Jay.</p>
+            <br>
+            <br>
         </div>
     </footer>
-
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelectorAll('#mobile-menu a, #header nav a');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                mobileMenu.classList.add('hidden');
-                const targetId = link.getAttribute('href');
-                if (targetId.startsWith('#')) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-    </script>
+</body>
+        <!-- copyright row ends -->
+        <!-- footer ends-->
+    <!-- END OF FOOTER -->
+  <!--2025 now updated-->
 </body>
 </html>
